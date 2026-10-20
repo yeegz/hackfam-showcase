@@ -1,56 +1,95 @@
 <!doctype html>
-<html lang="en" data-theme="light" data-motion="full">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hackfam · Prototype Tours</title>
+<meta name="description" content="Feature tours through the Hackfam design prototype: Onboarding, Events, Discover, and Teams.">
 <meta name="color-scheme" content="light dark">
-<title>Hackfam prototype</title>
-<!-- Hackfam · final combined prototype. A is the base (slots, Mona Sans, poster-tinted pools); B and C are grafted in.
-     Every frame is a live, independent instance. Everything is bundled: works from file://, no network. -->
-<link rel="stylesheet" href="css/app.css">
+<style>
+  @font-face { font-family: "Mona Sans"; src: url("../media/Mona-Sans.ttf") format("truetype"); font-weight: 200 900; font-stretch: 75% 125%; font-display: swap; }
+  :root { --bg: #F5F6F8; --surface: #FFFFFF; --ink: #111419; --ink2: #545D6B; --line: #E1E4E9; --control: #7D8796; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #0B0C0F; --surface: #141519; --ink: #F1F3F6; --ink2: #A3ACB9; --line: #22252B; --control: #6B7586; } }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 400 17px/1.55 "Mona Sans", -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 1120px; margin: 0 auto; padding: 48px 24px 80px; }
+  
+  .nav-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; }
+  .back-link { display: inline-flex; align-items: center; gap: 8px; font-weight: 640; color: var(--ink); text-decoration: none; font-size: 16px; }
+  .back-link:hover { text-decoration: underline; }
+  
+  h1 { font-size: clamp(40px, 7vw, 64px); line-height: 1.05; font-weight: 760; font-stretch: 112%; margin: 0 0 14px; letter-spacing: -0.01em; }
+  .lede { font-size: clamp(18px, 2vw, 22px); color: var(--ink2); max-width: 44ch; margin: 0 0 44px; }
+  
+  .tours { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px 20px; padding: 32px 24px 28px; background: var(--surface); border-radius: 26px; box-shadow: inset 0 0 0 1px var(--line); counter-reset: m; }
+  .tour-card { margin: 0; display: flex; flex-direction: column; }
+  .phone-frame {
+    position: relative;
+    border-radius: 36px;
+    background: #000;
+    padding: 10px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.18), inset 0 0 0 1px rgba(255,255,255,0.12);
+    overflow: hidden;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 260px;
+  }
+  .phone-frame img { display: block; width: 100%; height: auto; border-radius: 28px; }
+  
+  figcaption { margin-top: 18px; font-weight: 640; font-size: 18px; counter-increment: m; }
+  figcaption::before { content: counter(m, decimal-leading-zero); display: block; font-stretch: 112%; font-weight: 760; font-size: 15px; color: var(--ink2); margin-bottom: 4px; }
+  figcaption span { display: block; color: var(--ink2); font-weight: 400; font-size: 15px; margin-top: 2px; }
+  
+  footer { margin-top: 72px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--ink2); font-size: 15px; display: flex; flex-wrap: wrap; gap: 8px 24px; }
+  footer a { color: var(--ink); }
+  @media (max-width: 900px) { .tours { grid-template-columns: repeat(2, 1fr); padding: 24px 16px; } }
+  @media (max-width: 540px) { .tours { grid-template-columns: 1fr; } }
+</style>
 </head>
 <body>
-<header class="rv">
-  <span class="rv-name"><span><span data-app-name></span> · final system</span> <small>A base, with B’s proof and glyphs and C’s weekend kit. Preview data, nothing here is real.</small></span>
-  <div class="rv-ctl">
-    <span class="rv-haptic" id="haptic" aria-live="polite">Haptic: <b>none yet</b></span>
-    <div class="rv-seg" role="group" aria-label="Theme"><button data-theme-btn="light">Light</button><button data-theme-btn="dark">Dark</button></div>
-    <div class="rv-seg" role="group" aria-label="Motion"><button data-motion-btn="full">Full motion</button><button data-motion-btn="reduced">Reduced</button></div>
+<main>
+  <div class="nav-bar">
+    <a class="back-link" href="../">← Hackfam overview</a>
   </div>
-</header>
-<main class="board">
-  <h2 class="row-h">Phone · 390 × 844</h2>
-  <div class="row">
-    <figure class="frame" id="f-events"><figcaption class="frame-cap"><b>Events</b><span>Weekend chips, wristbands, For you rail</span></figcaption><div class="device"><div data-phone="events"></div></div></figure>
-    <figure class="frame" id="f-event"><figcaption class="frame-cap"><b>Event detail</b><span>Join the pool snaps the wristband</span><span class="cap-btns"><button data-replay="f-event" data-kind="join">Replay snap</button></span></figcaption><div class="device"><div data-phone="event" data-event="seoul"></div></div></figure>
-    <figure class="frame" id="f-discover"><figcaption class="frame-cap"><b>Discover · event pool</b><span>Drag. Inês, the 2nd card, says yes too.</span><span class="cap-btns"><button data-replay="f-discover" data-kind="deck">Reset</button></span></figcaption><div class="device"><div data-phone="discover"></div></div></figure>
+
+  <h1>Prototype in Motion</h1>
+  <p class="lede">Screen recordings captured from the interactive prototype, walking through the core moments of the mobile experience.</p>
+
+  <div class="tours">
+    <figure class="tour-card">
+      <div class="phone-frame">
+        <img src="../media/tour-onboarding-dark.gif" alt="Onboarding flow: pick events, connect GitHub, and choose roles" loading="lazy">
+      </div>
+      <figcaption>Start with your work<span>Event types, verified work, and role stickers.</span></figcaption>
+    </figure>
+
+    <figure class="tour-card">
+      <div class="phone-frame">
+        <img src="../media/tour-events-dark.gif" alt="Events flow: filter weekend, Seoul Night Build, wristband snaps shut" loading="lazy">
+      </div>
+      <figcaption>Find your weekend<span>Filter events, then the wristband snaps.</span></figcaption>
+    </figure>
+
+    <figure class="tour-card">
+      <div class="phone-frame">
+        <img src="../media/tour-discover-dark.gif" alt="Discover flow: drag and swipe builders, mutual match with Inês" loading="lazy">
+      </div>
+      <figcaption>Meet the pool<span>Swipe by hand, both say yes.</span></figcaption>
+    </figure>
+
+    <figure class="tour-card">
+      <div class="phone-frame">
+        <img src="../media/tour-team-dark.gif" alt="Teams flow: accept request, team full, checklist, final hour countdown" loading="lazy">
+      </div>
+      <figcaption>Fill the team<span>Last seat accepted, checklist, final hour.</span></figcaption>
+    </figure>
   </div>
-  <div class="row">
-    <figure class="frame" id="f-anyone"><figcaption class="frame-cap"><b>Discover · Anyone</b><span>Hyun-woo, the 2nd card, connects.</span><span class="cap-btns"><button data-replay="f-anyone" data-kind="deck">Reset</button></span></figcaption><div class="device"><div data-phone="anyone"></div></div></figure>
-    <figure class="frame" id="f-team"><figcaption class="frame-cap"><b>Team</b><span>Event day. Accept seats Inês.</span><span class="cap-btns"><button data-replay="f-team" data-kind="seat">Replay seat</button><button data-replay="f-team" data-kind="final">Final hour</button></span></figcaption><div class="device"><div data-phone="team"></div></div></figure>
-    <figure class="frame" id="f-you"><figcaption class="frame-cap"><b>You</b><span>Strength, stickers, how others see you</span></figcaption><div class="device"><div data-phone="you"></div></div></figure>
-  </div>
-  <div class="row">
-    <figure class="frame" id="f-onb-build"><figcaption class="frame-cap"><b>Onboarding · build at</b><span>Step 2 of 10</span></figcaption><div class="device"><div data-phone="onb-build"></div></div></figure>
-    <figure class="frame" id="f-onb-connect"><figcaption class="frame-cap"><b>Onboarding · connect</b><span>Step 3 of 10</span></figcaption><div class="device"><div data-phone="onb-connect"></div></div></figure>
-    <figure class="frame" id="f-onb-role"><figcaption class="frame-cap"><b>Onboarding · role</b><span>Step 6 of 10, stickers</span></figcaption><div class="device"><div data-phone="onb-role"></div></div></figure>
-  </div>
-  <h2 class="row-h">iPad · 820 × 1180 · rail</h2>
-  <div class="row">
-    <figure class="frame wf" id="f-ipad-events"><figcaption class="frame-cap"><b>Events</b><span>Wide feature, 2-column grids</span></figcaption><div class="device tablet"><div data-wide="events" data-form="rail"></div></div></figure>
-    <figure class="frame wf" id="f-ipad-discover"><figcaption class="frame-cap"><b>Discover</b><span>Card stays card-sized; profile pane beside it</span><span class="cap-btns"><button data-replay="f-ipad-discover" data-kind="deck">Reset</button></span></figcaption><div class="device tablet"><div data-wide="discover" data-form="rail"></div></div></figure>
-  </div>
-  <h2 class="row-h">Desktop · 1280 × 800 · sidebar</h2>
-  <div class="row">
-    <figure class="frame wf" id="f-desk"><figcaption class="frame-cap"><b>Events</b><span>Feature beside Waiting on you; click any event for the side pane</span></figcaption><div data-wide="events" data-form="sidebar"></div></figure>
-  </div>
+
+  <footer>
+    <span>Design prototype. In active development, not yet released.</span>
+    <span>Built by <a href="https://github.com/yeegz">Yousof Selim</a> · <a href="https://yousofselim.com">yousofselim.com</a></span>
+  </footer>
 </main>
-<script src="js/data.js"></script>
-<script src="js/glyphs.js"></script>
-<script src="js/art.js"></script>
-<script src="js/core.js"></script>
-<script src="js/screens.js"></script>
-<script src="js/app.js"></script>
-<script src="js/wide.js"></script>
 </body>
 </html>
