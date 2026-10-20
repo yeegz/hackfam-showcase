@@ -1,6 +1,6 @@
 # Matching people for a team
 
-Dating apps match on mutual attraction. Hackathon teams need the opposite of similarity: the frontend developer does not need a second frontend developer, they need a designer and someone for the backend. Joinlet's ranking is built around complementary roles, reciprocity and honesty about why a card is shown.
+Dating apps match on mutual attraction. Hackathon teams need the opposite of similarity: the frontend developer does not need a second frontend developer, they need a designer and someone for the backend. Hackfam's ranking is built around complementary roles, reciprocity and honesty about why a card is shown.
 
 ## Two scopes
 

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-motion="full">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Hackfam prototype</title>
+<!-- Hackfam · final combined prototype. A is the base (slots, Mona Sans, poster-tinted pools); B and C are grafted in.
+     Every frame is a live, independent instance. Everything is bundled: works from file://, no network. -->
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<header class="rv">
+  <span class="rv-name"><span><span data-app-name></span> · final system</span> <small>A base, with B’s proof and glyphs and C’s weekend kit. Preview data, nothing here is real.</small></span>
+  <div class="rv-ctl">
+    <span class="rv-haptic" id="haptic" aria-live="polite">Haptic: <b>none yet</b></span>
+    <div class="rv-seg" role="group" aria-label="Theme"><button data-theme-btn="light">Light</button><button data-theme-btn="dark">Dark</button></div>
+    <div class="rv-seg" role="group" aria-label="Motion"><button data-motion-btn="full">Full motion</button><button data-motion-btn="reduced">Reduced</button></div>
+  </div>
+</header>
+<main class="board">
+  <h2 class="row-h">Phone · 390 × 844</h2>
+  <div class="row">
+    <figure class="frame" id="f-events"><figcaption class="frame-cap"><b>Events</b><span>Weekend chips, wristbands, For you rail</span></figcaption><div class="device"><div data-phone="events"></div></div></figure>
+    <figure class="frame" id="f-event"><figcaption class="frame-cap"><b>Event detail</b><span>Join the pool snaps the wristband</span><span class="cap-btns"><button data-replay="f-event" data-kind="join">Replay snap</button></span></figcaption><div class="device"><div data-phone="event" data-event="seoul"></div></div></figure>
+    <figure class="frame" id="f-discover"><figcaption class="frame-cap"><b>Discover · event pool</b><span>Drag. Inês, the 2nd card, says yes too.</span><span class="cap-btns"><button data-replay="f-discover" data-kind="deck">Reset</button></span></figcaption><div class="device"><div data-phone="discover"></div></div></figure>
+  </div>
+  <div class="row">
+    <figure class="frame" id="f-anyone"><figcaption class="frame-cap"><b>Discover · Anyone</b><span>Hyun-woo, the 2nd card, connects.</span><span class="cap-btns"><button data-replay="f-anyone" data-kind="deck">Reset</button></span></figcaption><div class="device"><div data-phone="anyone"></div></div></figure>
+    <figure class="frame" id="f-team"><figcaption class="frame-cap"><b>Team</b><span>Event day. Accept seats Inês.</span><span class="cap-btns"><button data-replay="f-team" data-kind="seat">Replay seat</button><button data-replay="f-team" data-kind="final">Final hour</button></span></figcaption><div class="device"><div data-phone="team"></div></div></figure>
+    <figure class="frame" id="f-you"><figcaption class="frame-cap"><b>You</b><span>Strength, stickers, how others see you</span></figcaption><div class="device"><div data-phone="you"></div></div></figure>
+  </div>
+  <div class="row">
+    <figure class="frame" id="f-onb-build"><figcaption class="frame-cap"><b>Onboarding · build at</b><span>Step 2 of 10</span></figcaption><div class="device"><div data-phone="onb-build"></div></div></figure>
+    <figure class="frame" id="f-onb-connect"><figcaption class="frame-cap"><b>Onboarding · connect</b><span>Step 3 of 10</span></figcaption><div class="device"><div data-phone="onb-connect"></div></div></figure>
+    <figure class="frame" id="f-onb-role"><figcaption class="frame-cap"><b>Onboarding · role</b><span>Step 6 of 10, stickers</span></figcaption><div class="device"><div data-phone="onb-role"></div></div></figure>
+  </div>
+  <h2 class="row-h">iPad · 820 × 1180 · rail</h2>
+  <div class="row">
+    <figure class="frame wf" id="f-ipad-events"><figcaption class="frame-cap"><b>Events</b><span>Wide feature, 2-column grids</span></figcaption><div class="device tablet"><div data-wide="events" data-form="rail"></div></div></figure>
+    <figure class="frame wf" id="f-ipad-discover"><figcaption class="frame-cap"><b>Discover</b><span>Card stays card-sized; profile pane beside it</span><span class="cap-btns"><button data-replay="f-ipad-discover" data-kind="deck">Reset</button></span></figcaption><div class="device tablet"><div data-wide="discover" data-form="rail"></div></div></figure>
+  </div>
+  <h2 class="row-h">Desktop · 1280 × 800 · sidebar</h2>
+  <div class="row">
+    <figure class="frame wf" id="f-desk"><figcaption class="frame-cap"><b>Events</b><span>Feature beside Waiting on you; click any event for the side pane</span></figcaption><div data-wide="events" data-form="sidebar"></div></figure>
+  </div>
+</main>
+<script src="js/data.js"></script>
+<script src="js/glyphs.js"></script>
+<script src="js/art.js"></script>
+<script src="js/core.js"></script>
+<script src="js/screens.js"></script>
+<script src="js/app.js"></script>
+<script src="js/wide.js"></script>
+</body>
+</html>
