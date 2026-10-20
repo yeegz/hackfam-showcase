@@ -36,7 +36,12 @@ for name in sorted(os.listdir(frames_dir)):
         f = im.quantize(palette=pal, dither=Image.Dither.NONE)
         f.paste(255, mask=Image.eval(mask, lambda v: 255 - v))
         q.append(f)
-    durations = [700] + [40] * (len(q) - 2) + [1600]
+    dur_file = os.path.join(d, 'durations.json')
+    if os.path.exists(dur_file):
+        import json
+        durations = [max(20, int(x)) for x in json.load(open(dur_file))]
+    else:
+        durations = [700] + [40] * (len(q) - 2) + [1600]
     out = os.path.join(out_dir, f'{name}.gif')
     q[0].save(out, save_all=True, append_images=q[1:], duration=durations, loop=0, optimize=False, disposal=1, transparency=255)
     print(name, len(q), 'frames', round(os.path.getsize(out) / 1024), 'KB')

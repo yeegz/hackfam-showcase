@@ -22,14 +22,14 @@ Hackfam is built around those failures: **event first** (everyone you see is goi
   <img src="assets/composed/how-it-works-light.png" alt="Five steps: pick what you build at, pick an event, meet the pool, both say yes, fill the slots." width="100%">
 </picture>
 
-## Four moments, nothing else moves
+## The app in motion
 
-Motion is spent where something real happens. Every other transition is fast and quiet.
+Four short tours through the prototype, one per part of the app. Motion is spent where something real happens: the wristband snap, the match, the seat filling. Everything else is fast and quiet.
 
-| 01 · Join the pool | 02 · Both said yes | 03 · A future teammate | 04 · The last seat |
+| 01 · Start with your work | 02 · Find your weekend | 03 · Meet the pool | 04 · Fill the team |
 |:---:|:---:|:---:|:---:|
-| <img src="assets/moments/snap-dark.gif" width="180" alt="On the event page, Join the pool turns into the event's wristband and clicks shut."> | <img src="assets/moments/match-dark.gif" width="180" alt="Inês said yes too: her avatar flies into the open Design slot."> | <img src="assets/moments/connect-dark.gif" width="180" alt="Two build-rhythm charts interlock and the screen reads Connected."> | <img src="assets/moments/seat-dark.gif" width="180" alt="A slot request is accepted and the last role fills."> |
-| The button becomes your wristband | She lands in your open slot | Your build rhythms interlock | Four of four roles filled |
+| <img src="assets/moments/tour-onboarding-dark.gif" width="180" alt="Onboarding: pick hackathons, CTFs and game jams, connect a verified GitHub account, choose frontend and mobile roles."> | <img src="assets/moments/tour-events-dark.gif" width="180" alt="Events: filter to one weekend, open Seoul Night Build, join the pool and the button snaps into the event wristband."> | <img src="assets/moments/tour-discover-dark.gif" width="180" alt="Discover: swipe one builder away by hand, drag the next one right, and Inês said yes too."> | <img src="assets/moments/tour-team-dark.gif" width="180" alt="Teams: accept Inês and the last seat fills, tick the checklist, switch to the final hour countdown."> |
+| Event types, verified work, role stickers | Weekend filter, then the wristband snaps | Swipe by hand, both say yes | Last seat, checklist, final hour |
 
 ## One system, every screen size
 
