@@ -5,7 +5,7 @@
 
 **Teammates for hackathons, CTFs and game jams.** Pick an upcoming event, meet the builders going to it ranked by how well they fill your team's missing roles, and keep the people you build well with.
 
-[Try the clickable prototype](https://yeegz.github.io/hackfam-showcase/prototype/) · [How it works](#how-it-works) · [Engineering](#engineering) · [Honest status](#honest-status)
+[Try the clickable prototype](https://yousofselim.com/hackfam-showcase/prototype/) · [How it works](#how-it-works) · [Engineering](#engineering) · [Honest status](#honest-status)
 
 ---
 
