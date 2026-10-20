@@ -1,6 +1,6 @@
 <div align="center">
 
-# Joinlet
+# Hackfam
 
 **Find the people for your next build.**
 
@@ -12,13 +12,13 @@ An event-first teammate app for hackathons, CTFs, game jams and other builder ev
 
 ---
 
-This is the public showcase. The build repository is private; this one explains what the product is, how it is designed and built, and exactly how far along it is. Numbers here are read from the code, the database catalogue or a test run, and the status section says plainly what does not exist yet. "Joinlet" is a working name, not a cleared brand.
+This is the public showcase. The build repository is private; this one explains what the product is, how it is designed and built, and exactly how far along it is. Numbers here are read from the code, the database catalogue or a test run, and the status section says plainly what does not exist yet. Hackfam: hack + fam, the people you build with and keep.
 
 ## The idea
 
 Team formation at hackathons still happens through one-shot "team-up request" emails, a Discord `#find-a-team` channel and WhatsApp groups. Most participants arrive solo, and a 36-hour build lives or dies on whether the team has the roles it needs: a designer, someone for the backend, someone who can pitch.
 
-Swipe apps for builders have been tried many times. They stall for the same three reasons: a city-wide swipe deck is empty on a Tuesday afternoon, two people matching still leaves a team two people short, and generic "networking" gives nobody a reason to act now. Joinlet is built around those failures:
+Swipe apps for builders have been tried many times. They stall for the same three reasons: a city-wide swipe deck is empty on a Tuesday afternoon, two people matching still leaves a team two people short, and generic "networking" gives nobody a reason to act now. Hackfam is built around those failures:
 
 - **Event first, not radius first.** You join the pool for a specific upcoming event, so everyone you see has the same weekend in mind and a reason to reply this week.
 - **Teams, not just pairs.** A match can be person to person or person to team. Teams have role slots; the product's visual signature is a filled slot (a person in a role) next to an outlined one (the role still open).
@@ -63,7 +63,7 @@ Rules the design follows, and the product enforces in review:
 
 ## Honest status
 
-Joinlet is **in active development and not yet released.** Today:
+Hackfam is **in active development and not yet released.** Today:
 
 - The backend core above runs and is tested locally. Version 1.1 of the contract (people and event ranking, the Anyone scope, read side, notifications) is being implemented now.
 - The Flutter and web apps have their foundations (data layer, routing, auth) but not their final screens; the final visual system is being built from the prototypes shown above.
