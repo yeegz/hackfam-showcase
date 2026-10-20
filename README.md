@@ -24,10 +24,12 @@ Hackfam is built around those failures: **event first** (everyone you see is goi
 
 ## Four moments, nothing else moves
 
-| Join the pool | Both said yes | A future teammate | The last seat |
+Motion is spent where something real happens. Every other transition is fast and quiet.
+
+| 01 · Join the pool | 02 · Both said yes | 03 · A future teammate | 04 · The last seat |
 |:---:|:---:|:---:|:---:|
-| <img src="assets/moments/snap-dark.gif" width="200" alt="The Join the pool button turns into the event's wristband and clicks shut."> | <img src="assets/moments/match-dark.gif" width="200" alt="Inês said yes too: her avatar flies into the open Design slot."> | <img src="assets/moments/connect-dark.gif" width="200" alt="Two build-rhythm charts interlock and the screen reads Connected."> | <img src="assets/moments/seat-dark.gif" width="200" alt="A slot request is accepted and the last role fills."> |
-| The wristband snaps shut | She lands in your open slot | Your build rhythms interlock | Four of four roles filled |
+| <img src="assets/moments/snap-dark.gif" width="180" alt="On the event page, Join the pool turns into the event's wristband and clicks shut."> | <img src="assets/moments/match-dark.gif" width="180" alt="Inês said yes too: her avatar flies into the open Design slot."> | <img src="assets/moments/connect-dark.gif" width="180" alt="Two build-rhythm charts interlock and the screen reads Connected."> | <img src="assets/moments/seat-dark.gif" width="180" alt="A slot request is accepted and the last role fills."> |
+| The button becomes your wristband | She lands in your open slot | Your build rhythms interlock | Four of four roles filled |
 
 ## One system, every screen size
 

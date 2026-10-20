@@ -4,8 +4,9 @@ import os, sys
 from PIL import Image
 
 frames_dir, out_dir = sys.argv[1], sys.argv[2]
-WIDTH = 330
-CROP = {'snap': (0.58, 1.0)}  # the snap happens in the lower part of the event page
+WIDTH = 300
+CROP = {}  # every moment is shown as the full phone screen, so the four read as one set
+RADIUS = 52 / 390  # the phone screen's corner radius as a share of its width
 
 for name in sorted(os.listdir(frames_dir)):
     d = os.path.join(frames_dir, name)
@@ -25,9 +26,17 @@ for name in sorted(os.listdir(frames_dir)):
     probe = Image.new('RGB', (WIDTH, imgs[0].height * 3))
     for i, k in enumerate([0, len(imgs) // 2, len(imgs) - 1]):
         probe.paste(imgs[k], (0, i * imgs[0].height))
-    pal = probe.quantize(colors=255, method=Image.Quantize.MEDIANCUT)
-    q = [im.quantize(palette=pal, dither=Image.Dither.NONE) for im in imgs]
+    pal = probe.quantize(colors=254, method=Image.Quantize.MEDIANCUT)
+    # Transparent rounded corners so the phone sits cleanly on light and dark pages.
+    from PIL import ImageDraw
+    mask = Image.new('L', imgs[0].size, 0)
+    ImageDraw.Draw(mask).rounded_rectangle([0, 0, mask.width - 1, mask.height - 1], radius=round(WIDTH * RADIUS), fill=255)
+    q = []
+    for im in imgs:
+        f = im.quantize(palette=pal, dither=Image.Dither.NONE)
+        f.paste(255, mask=Image.eval(mask, lambda v: 255 - v))
+        q.append(f)
     durations = [700] + [40] * (len(q) - 2) + [1600]
     out = os.path.join(out_dir, f'{name}.gif')
-    q[0].save(out, save_all=True, append_images=q[1:], duration=durations, loop=0, optimize=True, disposal=1)
+    q[0].save(out, save_all=True, append_images=q[1:], duration=durations, loop=0, optimize=False, disposal=1, transparency=255)
     print(name, len(q), 'frames', round(os.path.getsize(out) / 1024), 'KB')
